@@ -1,0 +1,60 @@
+SET_FLAG DEBUG FALSE
+SET_FLAG MODE INTERACTIVE
+SET_FLAG STANDALONE_MODE FALSE
+SET_PREFERENCE devicefamily virtex7
+SET_PREFERENCE device xc7vx485t
+SET_PREFERENCE speedgrade -2
+SET_PREFERENCE package ffg1761
+SET_PREFERENCE verilogsim true
+SET_PREFERENCE vhdlsim false
+SET_PREFERENCE simulationfiles Behavioral
+SET_PREFERENCE busformat BusFormatAngleBracketNotRipped
+SET_PREFERENCE outputdirectory D:/Xilinx Project/FastLanes2.4 synthesis/ipcore_dir/
+SET_PREFERENCE workingdirectory D:/Xilinx Project/FastLanes2.4 synthesis/ipcore_dir/tmp/
+SET_PREFERENCE subworkingdirectory D:/Xilinx Project/FastLanes2.4 synthesis/ipcore_dir/tmp/_cg/
+SET_PREFERENCE transientdirectory D:/Xilinx Project/FastLanes2.4 synthesis/ipcore_dir/tmp/_cg/_dbg/
+SET_PREFERENCE designentry Verilog
+SET_PREFERENCE flowvendor Other
+SET_PREFERENCE addpads false
+SET_PREFERENCE projectname coregen
+SET_PREFERENCE formalverification false
+SET_PREFERENCE asysymbol false
+SET_PREFERENCE implementationfiletype Ngc
+SET_PREFERENCE foundationsym false
+SET_PREFERENCE createndf false
+SET_PREFERENCE removerpms false
+SET_PARAMETER depth 128
+SET_PARAMETER data_width 32
+SET_PARAMETER Component_Name IPCore_DisRAM_OC2
+SET_PARAMETER memory_type dual_port_ram
+SET_PARAMETER input_options non_registered
+SET_PARAMETER input_clock_enable false
+SET_PARAMETER qualify_we_with_i_ce false
+SET_PARAMETER dual_port_address non_registered
+SET_PARAMETER simple_dual_port_address non_registered
+SET_PARAMETER output_options non_registered
+SET_PARAMETER Pipeline_Stages 0
+SET_PARAMETER common_output_clk false
+SET_PARAMETER single_port_output_clock_enable false
+SET_PARAMETER common_output_ce false
+SET_PARAMETER dual_port_output_clock_enable false
+SET_PARAMETER simple_dual_port_output_clock_enable false
+SET_PARAMETER coefficient_file no_coe_file_loaded
+SET_PARAMETER default_data_radix 16
+SET_PARAMETER default_data 0
+SET_PARAMETER reset_qspo false
+SET_PARAMETER reset_qdpo false
+SET_PARAMETER reset_qsdpo false
+SET_PARAMETER sync_reset_qspo false
+SET_PARAMETER sync_reset_qdpo false
+SET_PARAMETER sync_reset_qsdpo false
+SET_PARAMETER ce_overrides ce_overrides_sync_controls
+SET_CORE_NAME Distributed Memory Generator
+SET_CORE_VERSION 7.2
+SET_CORE_VLNV xilinx.com:ip:dist_mem_gen:7.2
+SET_CORE_CLASS com.xilinx.ip.dist_mem_gen_v7_2.dist_mem_gen_v7_2
+SET_CORE_PATH F:/Xilinx/14.3/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/dist_mem_gen_v7_2
+SET_CORE_GUIPATH F:/Xilinx/14.3/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/dist_mem_gen_v7_2/gui/dist_mem_gen_v7_2.tcl
+SET_CORE_DATASHEET F:\Xilinx\14.3\ISE_DS\ISE\coregen\ip\xilinx\primary\com\xilinx\ip\dist_mem_gen_v7_2\doc\pg063-dist-mem-gen.pdf
+ADD_CORE_DOCUMENT <F:\Xilinx\14.3\ISE_DS\ISE\coregen\ip\xilinx\primary\com\xilinx\ip\dist_mem_gen_v7_2\doc\dist_mem_gen_v7_2_vinfo.html><dist_mem_gen_v7_2_vinfo.html>
+ADD_CORE_DOCUMENT <F:\Xilinx\14.3\ISE_DS\ISE\coregen\ip\xilinx\primary\com\xilinx\ip\dist_mem_gen_v7_2\doc\pg063-dist-mem-gen.pdf><pg063-dist-mem-gen.pdf>

@@ -1,0 +1,4 @@
+verilog work "stall_control.v"
+verilog work "ipcore_dir/IPCore_DisRAM_ROM_synth.v"
+verilog work "ipcore_dir/IPCore_DisRAM_OC_synth.v"
+verilog work "ipcore_dir/IPCore_DisRAM_OC2_synth.v"

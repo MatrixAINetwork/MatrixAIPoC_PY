@@ -1,0 +1,79 @@
+//**
+Simple PTX
+2012/11/24
+**//
+
+
+NOP
+//**Arithmetic**
+ADD_S32		// R: <rs, rt, rd, ru>; R[rd] = R[rs] + R[rt]
+SUB_S32		// R: <rs, rt, rd, ru>; R[rd] = R[rs] - R[rt]
+MUL_LO_S32	// R: <rs, rt, rd, ru>; R[rd] = Lo(R[rs] * R[rt])
+MUL_HI_S32	// R: <rs, rt, rd, ru>; R[rd] = Hi(R[rs] * R[rt])
+MAD_S32		// R: <rs, rt, rd, ru>; R[rd] = (R[rs] * R[rt]) + R[ru]
+DIV_S32		// R: <rs, rt, rd, ru>; R[rd] = R[rs] / R[rt]
+REM_S32		// R: <rs, rt, rd, ru>; R[rd] = R[rs] % R[rt]
+ABS_S32		// R: <rs, rt, rd, ru>; R[rd] = |R[rs]|
+NEG_S32		// R: <rs, rt, rd, ru>; R[rd] = 0 - R[rs]
+MIN_S32		// R: <rs, rt, rd, ru>; R[rd] = (R[rs] < R[rt]) ? R[rs]:R[rt]
+MAX_S32		// R: <rs, rt, rd, ru>; R[rd] = (R[rs] > R[rt]) ? R[rs]:R[rt]
+
+ADDI_S32	// I: <rs, rt,  Imm  >; R[rt] = R[rs] + SignExtImm
+SUBI_S32	// I: <rs, rt,  Imm  >; R[rt] = R[rs] - SignExtImm
+MULI_LO_S32	// I: <rs, rt,  Imm  >; R[rt] = Lo(R[rs] * SignExtImm)
+MULI_HI_S32	// I: <rs, rt,  Imm  >; R[rt] = Hi(R[rs] + SignExtImm)
+DIVI_S32	// I: <rs, rt,  Imm  >; R[rt] = R[rs] / SignExtImm
+REMI_S32	// I: <rs, rt,  Imm  >; R[rt] = R[rs] % SignExtImm
+MINI_S32	// I: <rs, rt,  Imm  >; R[rt] = (R[rs] < SignExtImm) ? R[rs]:SignExtImm
+MAXI_S32	// I: <rs, rt,  Imm  >; R[rt] = (R[rs] > SignExtImm) ? R[rs]:SignExtImm
+
+SETP_EQ_S32		// R: <rs, rt, rd, ru>; R[rd] = (R[rs] == R[rt])
+SETP_NE_S32		// R: <rs, rt, rd, ru>; R[rd] = (R[rs] != R[rt])
+SETP_LT_S32		// R: <rs, rt, rd, ru>; R[rd] = (R[rs] < R[rt])
+SETP_LE_S32		// R: <rs, rt, rd, ru>; R[rd] = (R[rs] <= R[rt])
+SETP_GT_S32		// R: <rs, rt, rd, ru>; R[rd] = (R[rs] > R[rt])
+SETP_GE_S32		// R: <rs, rt, rd, ru>; R[rd] = (R[rs] >= R[rt])
+
+SETPI_EQ_S32	// I: <rs, rt,  Imm  >; R[rt] = (R[rs] == SignExtImm)
+SETPI_NE_S32	// I: <rs, rt,  Imm  >; R[rt] = (R[rs] != SignExtImm)
+SETPI_LT_S32	// I: <rs, rt,  Imm  >; R[rt] = (R[rs] < SignExtImm)
+SETPI_LE_S32	// I: <rs, rt,  Imm  >; R[rt] = (R[rs] <= SignExtImm)
+SETPI_GT_S32	// I: <rs, rt,  Imm  >; R[rt] = (R[rs] > SignExtImm)
+SETPI_GE_S32	// I: <rs, rt,  Imm  >; R[rt] = (R[rs] >= SignExtImm)
+
+MOV		// I: <rs, rt,  Imm  >; R[rt] = R[rs]
+MOVI	// I: <rs, rt,  Imm  >; R[rt] = SignExtImm
+
+SELP	// R: <rs, rt, rd, ru>; R[rd] = R[rp] ? R[rs]:R[rt]
+CVT_F32_S32		// I: <rs, rt,  Imm  >; R[rt] = S32_to_F32(R[rs])
+CVT_S32_F32		// I: <rs, rt,  Imm  >; R[rt] = F32_to_S32(R[rs])
+
+
+//**Logical**
+AND		// R: <rs, rt, rd, ru>; R[rd] = R[rs] & R[rt]
+OR		// R: <rs, rt, rd, ru>; R[rd] = R[rs] | R[rt]
+XOR		// R: <rs, rt, rd, ru>; R[rd] = R[rs] ^ R[rt]
+NOT		// R: <rs, rt, rd, ru>; R[rd] = ~R[rs]
+CNOT	// R: <rs, rt, rd, ru>; R[rd] = (R[rs] == 0) ? 1:0
+SHL		// R: <rs, rt, rd, ru>; R[rd] = R[rs] << R[rt]
+SHR		// R: <rs, rt, rd, ru>; R[rd] = R[rs] >> R[rt]
+
+ANDI	// I: <rs, rt,  Imm  >; R[rt] = R[rs] & SignExtImm
+ORI		// I: <rs, rt,  Imm  >; R[rt] = R[rs] | SignExtImm
+XORI	// I: <rs, rt,  Imm  >; R[rt] = R[rs] ^ SignExtImm
+SHLI	// I: <rs, rt,  Imm  >; R[rt] = R[rs] << SignExtImm
+SHRI	// I: <rs, rt,  Imm  >; R[rt] = R[rs] >> SignExtImm
+
+
+//**Memory Access**
+LD_GLOBAL	// I: <rs, rt,  Imm  >; R[rt] = Data_Memory(R[rs] + SignExtImm)
+LD_SHARED	// I: <rs, rt,  Imm  >; R[rt] = Shared_Memory(R[rs] + SignExtImm)
+ST_GLOBAL	// I: <rs, rt,  Imm  >; Data_Memory(R[rs] + SignExtImm) = R[rt]
+ST_SHARED	// I: <rs, rt,  Imm  >; Shared_Memory(R[rs] + SignExtImm) = R[rt]
+
+
+//**CONTROL FLOW**
+BRA			// J: < RPC , Target >; 
+
+BAR_SYNC
+EXIT
