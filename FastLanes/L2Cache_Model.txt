@@ -1,0 +1,112 @@
+`timescale 1ns / 1ps
+`include "GPGPUParam.v"
+`include "MemoryParam.v"
+
+module L1Cache_Model(
+					input reset,
+					input clk,
+					
+					input stall_i,
+				
+					input load_i,
+					input store_i,
+					input packetValid_i,
+					input [`SIZE_MEM_BITS_LOG-1:0] addr_i,
+					input [`SIZE_REGFILE_BR-1:0] loadReg_i,
+					
+					
+					output [`SIZE_MEM_BITS_LOG-1:0] addr_o,
+					output [`SIZE_REGFILE_BR-1:0] loadReg_o,
+					
+					output [`L2_GLOBAL_CACHE_WAY_LOG-1:0] addrL2GlobalTag_o,
+					output valid_o
+					
+					);
+	
+	
+	reg [15:0] counter;
+	wire [15:0] popPoint;
+	
+	wire [`NUM_MEMLINE_LOG-1:0] addrLine;			
+	wire [`NUM_L1_GLOBAL_LINE_LOG-1:0] L1GlobalLine;	//`SIZE_L1_GLOBAL_CACHE_BYTES/`SIZE_MEMLINE_BYTES
+	assign addrLine = addr_i;//
+	assign L1GlobalLine = addr_i;//
+	
+	
+	wire [`L1_GLOBAL_CACHE_WAY_LOG-1:0] addrL1GlobalTag;
+	wire [`L2_GLOBAL_CACHE_WAY_LOG-1:0] addrL2GlobalTag;
+	wire [`L1_GLOBAL_CACHE_WAY_LOG-1:0] L1GlobalTag;
+	assign addrL1GlobalTag = addr_i;//
+	assign addrL2GlobalTag = addr_i;
+	//assign addrL2GlobalTag_o = addrL2GlobalTag;
+	assign L1GlobalTag = addr_i;//
+	
+	wire mshr0;
+	wire mshr1;
+	wire miss;
+	assign miss = (addrL1GlobalTag != L1GlobalTag) && (~mshr0);
+	
+	
+	/*
+	IPCore_DisRAM_SimplePort #(`NUM_L1_GLOBAL_LINE, `NUM_L1_GLOBAL_LINE_LOG, `L1_GLOBAL_CACHE_WAY_LOG)	
+		memory(
+			  .a(L1GlobalLine),//addr_write
+			  .d(addrL1GlobalTag),//din
+			  .dpra(L1GlobalLine),//addr_read
+			  .clk(clk),
+			  .we(miss),
+			  .dpo(L1GlobalTag)//dout
+			);
+	*/
+	
+	IPCore_BloRAM_SinglePort #(`NUM_L1_GLOBAL_LINE, `NUM_L1_GLOBAL_LINE_LOG, `L1_GLOBAL_CACHE_WAY_LOG)	
+		L1(
+			  .clka(clk),
+			  .wea(miss),
+			  .addra(L1GlobalLine),
+			  .dina(addrL1GlobalTag),
+			  .douta(L1GlobalTag)
+			);
+			
+	IPCore_BloRAM_TrueDualPort_SIMT_Stack #(`SIZE_MEM_WORDS, `SIZE_MEM_WORDS_LOG, 1)
+		MSHR(
+		  .clka(clk),
+		  .wea(1'b1),
+		  .addra(addr_i[`SIZE_MEM_BITS_LOG-1:5]),
+		  .dina(1'b1),
+		  .douta(mshr0),
+		  .clkb(clk),
+		  .web(1'b1),
+		  .addrb(addr_i[`SIZE_MEM_BITS_LOG-1:5] + 2),
+		  .dinb(1'b0),
+		  .doutb(mshr1)
+		);
+		
+		
+	FIFO_1W1R_0Latency #(128, 7, `SIZE_REGFILE_BR+`L2_GLOBAL_CACHE_WAY_LOG+16)
+		fifo(
+			  .clk(clk),
+			  .reset(reset),
+			  
+			  .push_en(miss),
+			  .pop_en(popPoint == counter),
+			  .din({loadReg_i, addr_i, counter + 100}),
+			  
+			  .dout({loadReg_o, addr_o, popPoint}),
+			  .popValid(valid_o),
+			  
+				.full(full),
+			  .empty(empty)			 
+			);	
+	
+	
+	always @(posedge clk) begin
+		if(reset) begin
+			counter <= 0;
+		end 
+		else begin
+			counter <= counter + 1;
+		end	
+	end
+					
+endmodule

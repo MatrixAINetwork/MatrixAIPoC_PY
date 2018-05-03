@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/ISE/FastLanes2.61/InfoRAM.xst" -ofn "D:/ISE/FastLanes2.61/InfoRAM.syr" 

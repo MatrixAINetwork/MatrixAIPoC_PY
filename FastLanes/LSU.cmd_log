@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "D:/ISE/FastLanes2.61/LSU.xst" -ofn "D:/ISE/FastLanes2.61/LSU.syr" 
+xst -intstyle ise -ifn "D:/ISE/FastLanes2.61/LSU.xst" -ofn "D:/ISE/FastLanes2.61/LSU.syr" 
+xst -intstyle ise -ifn "D:/ISE/FastLanes2.61/LSU.xst" -ofn "D:/ISE/FastLanes2.61/LSU.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc FastLanes.ucf -p xc7vx485t-ffg1761-2 LSU.ngc LSU.ngd  

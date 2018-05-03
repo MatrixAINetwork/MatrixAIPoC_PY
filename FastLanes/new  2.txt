@@ -1,0 +1,234 @@
+`timescale 1ns / 1ps
+`include "GPGPUParam.v"
+
+//???
+//means that the ScoreBoard mechanic still remain dubious
+
+module InstBuffer(
+				input reset,
+                input clk,
+				
+				input [`NUM_WARP_LOG-1:0] decodedWarp_i,
+				input decodedPacket0Valid_i,
+				input [6+`INST_TYPES_LOG+`SIZE_IMMEDIATE+4*(`SIZE_REGFILE+1)
+							+`SIZE_OPCODE+`SIZE_RP+1+3*`SIZE_PC-1
+							:0] decodedPacket0_i,
+				input decodedPacket1Valid_i,
+				input [6+`INST_TYPES_LOG+`SIZE_IMMEDIATE+4*(`SIZE_REGFILE+1)
+							+`SIZE_OPCODE+`SIZE_RP+1+3*`SIZE_PC-1
+							:0] decodedPacket1_i,
+				
+				input [`NUM_WARP-1:0] hazardVector0_i,
+				input [`NUM_WARP-1:0] hazardVector1_i,
+				
+				input toSelectReady_i,
+				
+				input flush_i,
+				input [`NUM_WARP_LOG-1:0] flushWarp_i,
+				input stall_i,
+				
+				output [`NUM_WARP-1:0] warpValidVector_o,
+				output [`NUM_WARP-1:0] instValidVector0_o,
+				output [`NUM_WARP-1:0] instValidVector1_o,
+				
+				output [`NUM_WARP_LOG-1:0] toSelectWarp_o,
+				output [`NUM_ENTRY_LOG-1:0] toSelectEntry_o,
+				output toSelectPacketValid_o,
+				output [6+`INST_TYPES_LOG+`SIZE_IMMEDIATE+4*(`SIZE_REGFILE+1)
+							+`SIZE_OPCODE+`SIZE_RP+1+3*`SIZE_PC-1
+							:0]toSelectPacket_o,
+				
+				output reg [`NUM_WARP_LOG-1:0] selectedWarp_o,
+				output reg [`NUM_ENTRY_LOG-1:0] selectedEntry_o,
+				output reg selectedPacketValid_o,
+				output reg [6+`INST_TYPES_LOG+`SIZE_IMMEDIATE+4*(`SIZE_REGFILE+1)
+							+`SIZE_OPCODE+`SIZE_RP+1+3*`SIZE_PC-1
+							:0]selectedPacket_o
+							
+						);
+							
+	
+	reg [`NUM_WARP-1:0] instValidVector0;
+	reg [`NUM_WARP-1:0] instValidVector1;
+	assign instValidVector0_o = instValidVector0;
+	assign instValidVector1_o = instValidVector1;
+	
+	wire [`NUM_WARP-1:0] instReadyVector0;
+	wire [`NUM_WARP-1:0] instReadyVector1;
+	wire [`NUM_WARP-1:0] warpReadyVector;
+	wire anyReady;
+	wire find_a_Choice;
+	assign instReadyVector0 = (~hazardVector0_i) & instValidVector0;
+	assign instReadyVector1 = (~hazardVector1_i) & instValidVector1;
+	assign warpReadyVector = instReadyVector0 | instReadyVector1;
+	assign anyReady = |warpReadyVector;
+	assign find_a_Choice = anyReady && toSelectReady_i;
+	
+	reg [6+`INST_TYPES_LOG+`SIZE_IMMEDIATE+4*(`SIZE_REGFILE+1)
+		+`SIZE_OPCODE+`SIZE_RP+1+3*`SIZE_PC-1
+		:0] packetBuffer0[`NUM_WARP-1:0];		
+	reg [6+`INST_TYPES_LOG+`SIZE_IMMEDIATE+4*(`SIZE_REGFILE+1)
+		+`SIZE_OPCODE+`SIZE_RP+1+3*`SIZE_PC-1
+		:0] packetBuffer1[`NUM_WARP-1:0];
+		
+	reg [`NUM_WARP_LOG-1:0] selectedWarp;
+	reg [`NUM_ENTRY_LOG-1:0]selectedEntry;
+	reg selectedPacketValid;
+	reg [6+`INST_TYPES_LOG+`SIZE_IMMEDIATE+4*(`SIZE_REGFILE+1)
+		+`SIZE_OPCODE+`SIZE_RP+1+3*`SIZE_PC-1
+		:0]selectedPacket;
+	reg [`NUM_WARP_LOG-1:0] preWarp;
+	
+	wire [`NUM_ENTRY_LOG-1:0]selectedEntry_ARB;
+	wire [`NUM_WARP_LOG-1:0] selectedWarp_ARB;
+	
+	
+	assign toSelectWarp_o = selectedWarp;
+	assign toSelectEntry_o = selectedEntry;
+	assign toSelectPacketValid_o = selectedPacketValid;
+	assign toSelectPacket_o = selectedPacket;
+	
+	
+	wire flush_selected;
+	wire flush_decoded;
+	assign flush_selected = (flush_i) && (flushWarp_i == selectedWarp_ARB);
+	assign flush_decoded = (flush_i) && (flushWarp_i == decodedWarp_i);
+	
+	
+	InstBufferArbiter instBufferArbiter(
+					.preWarp_i(preWarp),
+					.ReadyVector0_i(instReadyVector0),
+					.ReadyVector1_i(instReadyVector1),
+					.grantWarp_o(selectedWarp_ARB),
+					.grantEntry_o(selectedEntry_ARB)
+				);
+							
+	
+				
+	/* select result
+	*/
+	 assign warpValidVector_o = instValidVector0 | instValidVector1;
+	 
+	always @(posedge clk) begin
+		if (reset) begin
+			  instValidVector0 <= 4'b0000;	//Not Configurable yet!
+			  instValidVector1 <= 4'b0000;
+			  preWarp <= `PREWARP_START;
+			  
+			  selectedWarp_o <= 0;
+			  selectedEntry_o <= 0;
+			  selectedPacketValid_o <= 0;
+			  selectedPacket_o <= 0;
+			  
+			  packetBuffer0[0] <= 0;
+			  packetBuffer0[1] <= 0;
+			  packetBuffer0[2] <= 0;
+			  packetBuffer0[3] <= 0;
+			  packetBuffer1[0] <= 0;
+			  packetBuffer1[1] <= 0;
+			  packetBuffer1[2] <= 0;
+			  packetBuffer1[3] <= 0;
+		end
+		else begin
+		
+			if(~stall_i) begin
+						/*flush operation
+						*/
+						if(flush_i) begin
+							instValidVector0[flushWarp_i] <= 1'b0;
+							instValidVector1[flushWarp_i] <= 1'b0;
+						end
+				
+						
+						/*To set the valid vector
+						*/
+						if(flush_decoded) begin							
+						end
+						else begin
+							if(decodedPacket1Valid_i) begin
+								instValidVector0[decodedWarp_i] <= 1'b1;
+								packetBuffer0[decodedWarp_i] <= decodedPacket0_i;
+							end
+							if(decodedPacket1Valid_i) begin
+								instValidVector1[decodedWarp_i] <= 1'b1;
+								packetBuffer1[decodedWarp_i] <= decodedPacket1_i;
+							end
+						end
+
+				
+						/*select and unset Valid bit
+						*/
+						if(flush_selected) begin		
+							selectedWarp_o <= 0;
+							selectedEntry_o <= 0;
+							selectedPacketValid_o <= 0;
+							selectedPacket_o <= 0;
+						end		
+						else begin
+							
+							selectedWarp_o <= selectedWarp;
+							selectedEntry_o <= selectedEntry;
+							selectedPacketValid_o <= selectedPacketValid;
+							selectedPacket_o <= selectedPacket;
+							
+							preWarp <= selectedWarp;
+							
+							if(find_a_Choice) begin
+								case(selectedEntry_ARB)
+									1'b0: begin
+										instValidVector0[selectedWarp_ARB] <= 1'b0;
+									end
+									
+									1'b1: begin
+										instValidVector1[selectedWarp_ARB] <= 1'b0;
+									end						
+								endcase	
+							end
+						end
+
+				
+			end//stall_i	
+			
+		end				
+	end
+	
+	
+	
+	wire [6+`INST_TYPES_LOG+`SIZE_IMMEDIATE+4*(`SIZE_REGFILE+1)
+		+`SIZE_OPCODE+`SIZE_RP+1+3*`SIZE_PC-1
+		:0] packetBuffer0_ARB;
+	wire [6+`INST_TYPES_LOG+`SIZE_IMMEDIATE+4*(`SIZE_REGFILE+1)
+		+`SIZE_OPCODE+`SIZE_RP+1+3*`SIZE_PC-1
+		:0] packetBuffer1_ARB;
+		
+	assign packetBuffer0_ARB = packetBuffer0[selectedWarp_ARB];
+	assign packetBuffer1_ARB = packetBuffer1[selectedWarp_ARB];
+	
+	always @(*) begin
+	  
+			selectedEntry = selectedEntry_ARB;
+			
+			case(selectedEntry_ARB)
+				1'b0: begin
+					selectedPacket = packetBuffer0_ARB;
+				end
+				
+				1'b1: begin
+					selectedPacket = packetBuffer1_ARB;
+				end
+			endcase
+	  
+	  
+		if(find_a_Choice) begin		
+			selectedWarp = selectedWarp_ARB;					
+			selectedPacketValid = 1'b1;	
+		end		
+		else begin
+			selectedWarp = preWarp;
+			selectedPacketValid = 1'b0;
+		end
+	end
+	 
+
+	
+endmodule

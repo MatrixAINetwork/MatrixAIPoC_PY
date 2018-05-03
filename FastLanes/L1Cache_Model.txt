@@ -1,0 +1,7 @@
+`timescale 1ns / 1ps
+`include "GPGPUParam.v"
+`include "MemoryParam.v"
+
+module L1Cache_Model(
+					input reset,
+					input clk,

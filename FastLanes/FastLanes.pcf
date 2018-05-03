@@ -1,0 +1,14 @@
+//! **************************************************************************
+// Written by: Map P.40xd on Thu May 16 02:34:47 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "euqa_o<5>" LOCATE = SITE "AP41" LEVEL 1;
+COMP "euqa_o<1>" LOCATE = SITE "AN39" LEVEL 1;
+COMP "euqa_o<2>" LOCATE = SITE "AR37" LEVEL 1;
+COMP "euqa_o<3>" LOCATE = SITE "AT37" LEVEL 1;
+COMP "euqa_o<4>" LOCATE = SITE "AR35" LEVEL 1;
+COMP "euqa_o<0>" LOCATE = SITE "AM39" LEVEL 1;
+COMP "reset" LOCATE = SITE "AV40" LEVEL 1;
+SCHEMATIC END;
+

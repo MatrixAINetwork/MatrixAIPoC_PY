@@ -1,0 +1,53 @@
+【总体问题】
+
+尚没有考虑什么时候需要flush？哪些模块需要被flush？（以及stall,Valid）
+
+关于流水线设计：GPGPU-sim的流水线是否需要分成更多的阶段？有些paper里面的流水线级数更多！
+
+
+【Fetch.v】
+多线程Warp：一个Cache多个PC vs.多个Cache多个PC？
+
+InstBufferValid 数组？
+
+Round-robin design？(现在的逻辑也需要改)
+
+*如果跳转到某一条指令正好只有一条JP，却连续读进了2条怎么办？或者如果读进去的第一条指令是JP的话也有这个问题
+
+nextPC怎么赋给WarpPC？
+
+怎么开始与结束一个Warp？（目前的方法是Param里面设置StartPC, EndPC）每次开始一个warp都要flush掉几个时钟周期，这样值得吗？
+(接上)PREWARP_START怎么设置？目前是2'b10，很不美。
+
+
+【InstBuffer.v】
+*对于decodedWarp_o等变量，位数设置为[`WARP_NUM_LOG-1:0]会不会不好寻址？是否有更好的方法？
+
+
+【SIMT-Stack.v】
+*当遇到JP时，是否要flush？如何只flush掉自己的线程？
+
+存哪条指令作为NextPC？是否每次reconvergence的时候要stall掉一个指令？（是否需要浪费一个周期）
+（接上）分支run到哪条指令（E vs. E前面那条）标志着弹栈和reconv？（涉及编译器怎么写的问题）
+
+assign pushActiveMask_warp0 = predMask_i & ActiveMask[TOS_warp0] 写在外面和写在always{}里面哪个延时*面积更小？
+
+nextPC是decode阶段算好一步一步传过来还是在本模块里面计算？
+
+
+【Issue.v】
+时序细节：IssueArbiter扫描的顺序：先warp后entry vs. 先entry后warp？
+
+时序细节：if(ReadyVector0_i[grantWarp] == 1'b1) grantEntry_o = 1'b0; 是否会延时太多了？
+
+
+【次要问题】
+各种param，比如Simt-Stack栈深和Size_Pred还没有仔细设定？
+
+
+
+【【学习内容】】
+4. metric 以及 benchmark
+5. DDR5
+6. simulator是怎么计算Area的？
+7. PDOM和Dynamic Warp Formation的区别？

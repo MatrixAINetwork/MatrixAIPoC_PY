@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/ISE/FastLanes2.61/L1TagUnit.xst" -ofn "D:/ISE/FastLanes2.61/L1TagUnit.syr" 

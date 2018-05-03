@@ -1,0 +1,9 @@
+NET "clk" LOC = "AP37";
+NET "reset" LOC = "AV40";
+
+NET "euqa_o[0]" LOC = "AM39";
+NET "euqa_o[1]" LOC = "AN39";
+NET "euqa_o[2]" LOC = "AR37";
+NET "euqa_o[3]" LOC = "AT37";
+NET "euqa_o[4]" LOC = "AR35";
+NET "euqa_o[5]" LOC = "AP41";

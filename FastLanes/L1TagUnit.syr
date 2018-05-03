@@ -1,0 +1,475 @@
+Release 14.3 - xst P.40xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: L1TagUnit.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "L1TagUnit.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "L1TagUnit"
+Output Format                      : NGC
+Target Device                      : xc7vx485t-2-ffg1761
+
+---- Source Options
+Top Module Name                    : L1TagUnit
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\ISE\FastLanes2.61\IPCore_substitute.v" into library work
+Parsing module <IPCore_BloRAM_SinglePort>.
+Parsing module <IPCore_BloRAM_TrueDualPort_SIMT_Stack>.
+Parsing module <IPCore_DisRAM_SimplePort>.
+Parsing module <IPCore_DisRAM_PyseudoRom>.
+Parsing module <IPCore_DualPort_DisRam>.
+Analyzing Verilog file "D:\ISE\FastLanes2.61\L1TagUnit.v" into library work
+Parsing verilog file "GPGPUParam.v" included at line 3.
+Parsing verilog file "MemoryParam.v" included at line 4.
+Parsing module <L1TagUnit>.
+Analyzing Verilog file "D:\ISE\FastLanes2.61\ipcore_dir\IPCore_DisRAM_ROM_synth.v" into library work
+Parsing module <IPCore_DisRAM_ROM2>.
+Analyzing Verilog file "D:\ISE\FastLanes2.61\ipcore_dir\IPCore_DisRAM_OC_synth.v" into library work
+Parsing module <IPCore_DisRAM_OC>.
+Analyzing Verilog file "D:\ISE\FastLanes2.61\ipcore_dir\IPCore_DisRAM_OC2_synth.v" into library work
+Parsing module <IPCore_DisRAM_OC22>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <L1TagUnit>.
+WARNING:HDLCompiler:413 - "D:\ISE\FastLanes2.61\L1TagUnit.v" Line 44: Result of 32-bit expression is truncated to fit in 10-bit target.
+
+Elaborating module <IPCore_DisRAM_SimplePort(SRAM_DEPTH=512,SRAM_INDEX=9,DATA_WIDTH=18)>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <L1TagUnit>.
+    Related source file is "D:\ISE\FastLanes2.61\L1TagUnit.v".
+WARNING:Xst:647 - Input <L1TagWriteAddr<4:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SegNum> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 512-bit register for signal <L1Valid>.
+    Found 32-bit register for signal <Coalesce2L1_o_pre>.
+    Found 1-bit 512-to-1 multiplexer for signal <GND_1_o_GND_1_o_equal_3_o> created at line 42.
+    Found 32-bit comparator not equal for signal <n0000> created at line 42
+    Found 18-bit comparator equal for signal <Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o> created at line 43
+    Summary:
+	inferred 544 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred 513 Multiplexer(s).
+Unit <L1TagUnit> synthesized.
+
+Synthesizing Unit <IPCore_DisRAM_SimplePort>.
+    Related source file is "D:\ISE\FastLanes2.61\IPCore_substitute.v".
+        SRAM_DEPTH = 512
+        SRAM_INDEX = 9
+        DATA_WIDTH = 18
+    Found 512x18-bit dual-port RAM <Mram_data> for signal <data>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <IPCore_DisRAM_SimplePort> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 512x18-bit dual-port RAM                              : 1
+# Registers                                            : 2
+ 32-bit register                                       : 1
+ 512-bit register                                      : 1
+# Comparators                                          : 2
+ 18-bit comparator equal                               : 1
+ 32-bit comparator not equal                           : 1
+# Multiplexers                                         : 513
+ 1-bit 512-to-1 multiplexer                            : 1
+ 32-bit 2-to-1 multiplexer                             : 512
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <IPCore_DisRAM_SimplePort>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_data> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 512-word x 18-bit                   |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <a>             |          |
+    |     diA            | connected to signal <d>             |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 512-word x 18-bit                   |          |
+    |     addrB          | connected to signal <dpra>          |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <IPCore_DisRAM_SimplePort> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 512x18-bit dual-port distributed RAM                  : 1
+# Registers                                            : 544
+ Flip-Flops                                            : 544
+# Comparators                                          : 2
+ 18-bit comparator equal                               : 1
+ 32-bit comparator not equal                           : 1
+# Multiplexers                                         : 513
+ 1-bit 512-to-1 multiplexer                            : 1
+ 32-bit 2-to-1 multiplexer                             : 512
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <L1TagUnit> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block L1TagUnit, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 544
+ Flip-Flops                                            : 544
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : L1TagUnit.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 807
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 1
+#      LUT3                        : 24
+#      LUT4                        : 1
+#      LUT5                        : 8
+#      LUT6                        : 734
+#      MUXCY                       : 17
+#      MUXF7                       : 19
+#      VCC                         : 1
+# FlipFlops/Latches                : 544
+#      FDRE                        : 544
+# RAMS                             : 48
+#      RAM64M                      : 48
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 73
+#      IBUF                        : 62
+#      OBUF                        : 11
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7vx485tffg1761-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             544  out of  607200     0%  
+ Number of Slice LUTs:                  961  out of  303600     0%  
+    Number used as Logic:               769  out of  303600     0%  
+    Number used as Memory:              192  out of  130800     0%  
+       Number used as RAM:              192
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    977
+   Number with an unused Flip Flop:     433  out of    977    44%  
+   Number with an unused LUT:            16  out of    977     1%  
+   Number of fully used LUT-FF pairs:   528  out of    977    54%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          84
+ Number of bonded IOBs:                  74  out of    700    10%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 592   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 0.634ns (Maximum Frequency: 1576.665MHz)
+   Minimum input arrival time before clock: 1.570ns
+   Maximum output required time after clock: 4.059ns
+   Maximum combinational path delay: 3.415ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 0.634ns (frequency: 1576.665MHz)
+  Total number of paths / destination ports: 512 / 512
+-------------------------------------------------------------------------
+Delay:               0.634ns (Levels of Logic = 1)
+  Source:            L1Valid_0 (FF)
+  Destination:       L1Valid_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: L1Valid_0 to L1Valid_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.236   0.355  L1Valid_0 (L1Valid_0)
+     LUT6:I5->O            1   0.043   0.000  Mmux_n105311 (n1053<0>)
+     FDRE:D                   -0.000          L1Valid_0
+    ----------------------------------------
+    Total                      0.634ns (0.279ns logic, 0.355ns route)
+                                       (44.0% logic, 56.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 6912 / 2112
+-------------------------------------------------------------------------
+Offset:              1.570ns (Levels of Logic = 2)
+  Source:            L1TagWriteAddr<11> (PAD)
+  Destination:       memAccessBundleRamL1/Mram_data2 (RAM)
+  Destination Clock: clk rising
+
+  Data Path: L1TagWriteAddr<11> to memAccessBundleRamL1/Mram_data2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           136   0.000   0.752  L1TagWriteAddr_11_IBUF (L1TagWriteAddr_11_IBUF)
+     LUT5:I0->O            6   0.043   0.367  write_ctrl1 (write_ctrl1)
+     RAM64M:WE                 0.408          memAccessBundleRamL1/Mram_data2
+    ----------------------------------------
+    Total                      1.570ns (0.451ns logic, 1.119ns route)
+                                       (28.7% logic, 71.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 1376 / 2
+-------------------------------------------------------------------------
+Offset:              4.059ns (Levels of Logic = 11)
+  Source:            memAccessBundleRamL1/Mram_data7 (RAM)
+  Destination:       Delay<0> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: memAccessBundleRamL1/Mram_data7 to Delay<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAM64M:WCLK->DOA      1   1.345   0.522  memAccessBundleRamL1/Mram_data7 (N49)
+     LUT6:I2->O            1   0.043   0.000  inst_LPM_MUX_3 (inst_LPM_MUX_3)
+     MUXF7:I1->O           1   0.178   0.603  inst_LPM_MUX_2_f7 (L1Tag_o<0>)
+     LUT6:I1->O            1   0.043   0.000  Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_lut<0> (Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_lut<0>)
+     MUXCY:S->O            1   0.238   0.000  Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<0> (Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<0>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<1> (Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<1>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<2> (Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<2>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<3> (Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<3>)
+     MUXCY:CI->O           1   0.013   0.000  Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<4> (Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<4>)
+     MUXCY:CI->O           1   0.151   0.495  Mcompar_Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o_cy<5> (Coalesce2L1_o[31]_L1Tag_o[17]_equal_4_o)
+     LUT3:I0->O            2   0.043   0.344  L1_HIT1 (L1_HIT_OBUF)
+     OBUF:I->O                 0.000          Delay_0_OBUF (Delay<0>)
+    ----------------------------------------
+    Total                      4.059ns (2.094ns logic, 1.965ns route)
+                                       (51.6% logic, 48.4% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 962 / 2
+-------------------------------------------------------------------------
+Delay:               3.415ns (Levels of Logic = 8)
+  Source:            Coalesce2L1_o<6> (PAD)
+  Destination:       Delay<0> (PAD)
+
+  Data Path: Coalesce2L1_o<6> to Delay<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           130   0.000   0.761  Coalesce2L1_o_6_IBUF (Coalesce2L1_o_6_IBUF)
+     LUT6:I0->O            1   0.043   0.522  Mmux_GND_1_o_GND_1_o_equal_3_o_1814 (Mmux_GND_1_o_GND_1_o_equal_3_o_1814)
+     LUT6:I2->O            1   0.043   0.522  Mmux_GND_1_o_GND_1_o_equal_3_o_134 (Mmux_GND_1_o_GND_1_o_equal_3_o_134)
+     LUT6:I2->O            1   0.043   0.522  Mmux_GND_1_o_GND_1_o_equal_3_o_81 (Mmux_GND_1_o_GND_1_o_equal_3_o_81)
+     LUT6:I2->O            1   0.043   0.000  Mmux_GND_1_o_GND_1_o_equal_3_o_3 (Mmux_GND_1_o_GND_1_o_equal_3_o_3)
+     MUXF7:I1->O           1   0.178   0.350  Mmux_GND_1_o_GND_1_o_equal_3_o_2_f7 (GND_1_o_GND_1_o_equal_3_o)
+     LUT3:I2->O            2   0.043   0.344  L1_HIT1 (L1_HIT_OBUF)
+     OBUF:I->O                 0.000          Delay_0_OBUF (Delay<0>)
+    ----------------------------------------
+    Total                      3.415ns (0.393ns logic, 3.022ns route)
+                                       (11.5% logic, 88.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    0.634|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 16.70 secs
+ 
+--> 
+
+Total memory usage is 467204 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

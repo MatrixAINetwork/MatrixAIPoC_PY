@@ -1,0 +1,577 @@
+Release 14.3 - xst P.40xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: InfoRAM.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "InfoRAM.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "InfoRAM"
+Output Format                      : NGC
+Target Device                      : xc7vx485t-2-ffg1761
+
+---- Source Options
+Top Module Name                    : InfoRAM
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\ISE\FastLanes2.61\IPCore_substitute.v" into library work
+Parsing module <IPCore_BloRAM_SinglePort>.
+Parsing module <IPCore_BloRAM_TrueDualPort_SIMT_Stack>.
+Parsing module <IPCore_DisRAM_SimplePort>.
+Parsing module <IPCore_DisRAM_PyseudoRom>.
+Parsing module <IPCore_DualPort_DisRam>.
+Analyzing Verilog file "D:\ISE\FastLanes2.61\FirstZero.v" into library work
+Parsing verilog file "GPGPUParam.v" included at line 2.
+Parsing verilog file "MemoryParam.v" included at line 3.
+Parsing module <FirstZero>.
+Analyzing Verilog file "D:\ISE\FastLanes2.61\InfoRam.v" into library work
+Parsing verilog file "GPGPUParam.v" included at line 3.
+Parsing verilog file "MemoryParam.v" included at line 4.
+Parsing module <InfoRAM>.
+Analyzing Verilog file "D:\ISE\FastLanes2.61\ipcore_dir\IPCore_DisRAM_ROM_synth.v" into library work
+Parsing module <IPCore_DisRAM_ROM2>.
+Analyzing Verilog file "D:\ISE\FastLanes2.61\ipcore_dir\IPCore_DisRAM_OC_synth.v" into library work
+Parsing module <IPCore_DisRAM_OC>.
+Analyzing Verilog file "D:\ISE\FastLanes2.61\ipcore_dir\IPCore_DisRAM_OC2_synth.v" into library work
+Parsing module <IPCore_DisRAM_OC22>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <InfoRAM>.
+WARNING:HDLCompiler:413 - "D:\ISE\FastLanes2.61\InfoRam.v" Line 52: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "D:\ISE\FastLanes2.61\InfoRam.v" Line 61: Result of 32-bit expression is truncated to fit in 5-bit target.
+
+Elaborating module <FirstZero>.
+
+Elaborating module <IPCore_DisRAM_SimplePort(SRAM_DEPTH=32,SRAM_INDEX=5,DATA_WIDTH=42)>.
+
+Elaborating module <IPCore_DisRAM_SimplePort(SRAM_DEPTH=32,SRAM_INDEX=5,DATA_WIDTH=1024)>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <InfoRAM>.
+    Related source file is "D:\ISE\FastLanes2.61\InfoRam.v".
+    Found 5-bit register for signal <num>.
+    Found 1-bit register for signal <InfoRamFull>.
+    Found 32-bit register for signal <RamValid>.
+    Found 5-bit adder for signal <num[4]_GND_1_o_add_37_OUT> created at line 52.
+    Found 5-bit subtractor for signal <GND_1_o_GND_1_o_sub_75_OUT<4:0>> created at line 61.
+    Found 1-bit 32-to-1 multiplexer for signal <RAM_Out_Addr[4]_RamValid[31]_Mux_40_o> created at line 58.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+	inferred  66 Multiplexer(s).
+Unit <InfoRAM> synthesized.
+
+Synthesizing Unit <FirstZero>.
+    Related source file is "D:\ISE\FastLanes2.61\FirstZero.v".
+    Found 2-bit adder for signal <n0598[1:0]> created at line 46.
+    Found 3-bit adder for signal <n0601[2:0]> created at line 46.
+    Found 4-bit adder for signal <n0604[3:0]> created at line 46.
+    Found 5-bit adder for signal <_n0719> created at line 8.
+    Found 5-bit adder for signal <_n0720> created at line 8.
+    Found 5-bit adder for signal <_n0721> created at line 8.
+    Found 5-bit adder for signal <_n0722> created at line 8.
+    Found 5-bit adder for signal <_n0723> created at line 8.
+    Found 5-bit adder for signal <_n0724> created at line 8.
+    Found 5-bit adder for signal <_n0725> created at line 8.
+    Found 5-bit adder for signal <_n0726> created at line 8.
+    Found 5-bit adder for signal <_n0727> created at line 8.
+    Found 5-bit adder for signal <_n0728> created at line 8.
+    Found 5-bit adder for signal <_n0729> created at line 8.
+    Found 5-bit adder for signal <_n0730> created at line 8.
+    Found 5-bit adder for signal <_n0731> created at line 8.
+    Found 5-bit adder for signal <_n0732> created at line 8.
+    Found 5-bit adder for signal <_n0733> created at line 8.
+    Found 5-bit adder for signal <_n0734> created at line 8.
+    Found 5-bit adder for signal <_n0735> created at line 8.
+    Found 5-bit adder for signal <_n0736> created at line 8.
+    Found 5-bit adder for signal <_n0737> created at line 8.
+    Found 5-bit adder for signal <_n0738> created at line 8.
+    Found 5-bit adder for signal <_n0739> created at line 8.
+    Found 5-bit adder for signal <_n0740> created at line 8.
+    Found 5-bit adder for signal <_n0741> created at line 8.
+    Found 5-bit adder for signal <_n0742> created at line 8.
+    Found 5-bit adder for signal <_n0743> created at line 8.
+    Found 5-bit adder for signal <_n0744> created at line 8.
+    Found 5-bit adder for signal <_n0745> created at line 8.
+    Found 5-bit adder for signal <FirstZero> created at line 8.
+    Summary:
+	inferred  31 Adder/Subtractor(s).
+Unit <FirstZero> synthesized.
+
+Synthesizing Unit <IPCore_DisRAM_SimplePort_1>.
+    Related source file is "D:\ISE\FastLanes2.61\IPCore_substitute.v".
+        SRAM_DEPTH = 32
+        SRAM_INDEX = 5
+        DATA_WIDTH = 42
+    Found 32x42-bit dual-port RAM <Mram_data> for signal <data>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <IPCore_DisRAM_SimplePort_1> synthesized.
+
+Synthesizing Unit <IPCore_DisRAM_SimplePort_2>.
+    Related source file is "D:\ISE\FastLanes2.61\IPCore_substitute.v".
+        SRAM_DEPTH = 32
+        SRAM_INDEX = 5
+        DATA_WIDTH = 1024
+    Found 32x1024-bit dual-port RAM <Mram_data> for signal <data>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <IPCore_DisRAM_SimplePort_2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 32x1024-bit dual-port RAM                             : 2
+ 32x42-bit dual-port RAM                               : 1
+# Adders/Subtractors                                   : 32
+ 2-bit adder                                           : 1
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
+ 5-bit adder                                           : 28
+ 5-bit addsub                                          : 1
+# Registers                                            : 3
+ 1-bit register                                        : 1
+ 32-bit register                                       : 1
+ 5-bit register                                        : 1
+# Multiplexers                                         : 66
+ 1-bit 32-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 65
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <FirstZero>.
+	The following adders/subtractors are grouped into adder tree <Madd_FirstZero_Madd1> :
+ 	<Madd__n0720> in block <FirstZero>, 	<Madd__n0721_Madd> in block <FirstZero>, 	<Madd__n0723> in block <FirstZero>, 	<Madd__n0724_Madd> in block <FirstZero>, 	<Madd__n0726> in block <FirstZero>, 	<Madd__n0727_Madd> in block <FirstZero>, 	<Madd__n0731> in block <FirstZero>, 	<Madd__n0732_Madd> in block <FirstZero>, 	<Madd__n0734> in block <FirstZero>, 	<Madd__n0735_Madd> in block <FirstZero>, 	<Madd__n0738> in block <FirstZero>, 	<Madd__n0739_Madd> in block <FirstZero>, 	<Madd__n0741> in block <FirstZero>, 	<Madd__n0742_Madd> in block <FirstZero>, 	<Madd_n0601[2:0]_Madd> in block <FirstZero>, 	<Madd_FirstZero_Madd> in block <FirstZero>.
+	The following adders/subtractors are grouped into adder tree <Madd__n07451> :
+ 	<Madd__n0729> in block <FirstZero>, 	<Madd__n0728> in block <FirstZero>, 	<Madd__n0736> in block <FirstZero>, 	<Madd__n0743> in block <FirstZero>.
+Unit <FirstZero> synthesized (advanced).
+
+Synthesizing (advanced) Unit <IPCore_DisRAM_SimplePort_1>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_data> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 42-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <a>             |          |
+    |     diA            | connected to signal <d>             |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 42-bit                    |          |
+    |     addrB          | connected to signal <dpra>          |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <IPCore_DisRAM_SimplePort_1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <IPCore_DisRAM_SimplePort_2>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_data> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 1024-bit                  |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <a>             |          |
+    |     diA            | connected to signal <d>             |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 1024-bit                  |          |
+    |     addrB          | connected to signal <dpra>          |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <IPCore_DisRAM_SimplePort_2> synthesized (advanced).
+
+Synthesizing (advanced) Unit <InfoRAM>.
+The following registers are absorbed into counter <num>: 1 register on signal <num>.
+Unit <InfoRAM> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 32x1024-bit dual-port distributed RAM                 : 2
+ 32x42-bit dual-port distributed RAM                   : 1
+# Adder Trees                                          : 1
+ 5-bit / 23-inputs adder tree                          : 1
+# Counters                                             : 1
+ 5-bit updown counter                                  : 1
+# Registers                                            : 33
+ Flip-Flops                                            : 33
+# Multiplexers                                         : 66
+ 1-bit 32-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 65
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <InfoRAM> ...
+
+Optimizing unit <FirstZero> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block InfoRAM, actual ratio is 0.
+FlipFlop RamValid_21 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 39
+ Flip-Flops                                            : 39
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : InfoRAM.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 323
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 5
+#      LUT3                        : 35
+#      LUT4                        : 46
+#      LUT5                        : 30
+#      LUT6                        : 201
+#      MUXF7                       : 4
+# FlipFlops/Latches                : 39
+#      FDR                         : 1
+#      FDRE                        : 38
+# RAMS                             : 355
+#      RAM32M                      : 347
+#      RAM32X1D                    : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 4195
+#      IBUF                        : 2099
+#      OBUF                        : 2096
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7vx485tffg1761-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              39  out of  607200     0%  
+ Number of Slice LUTs:                 1722  out of  303600     0%  
+    Number used as Logic:               318  out of  303600     0%  
+    Number used as Memory:             1404  out of  130800     1%  
+       Number used as RAM:             1404
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1723
+   Number with an unused Flip Flop:    1684  out of   1723    97%  
+   Number with an unused LUT:             1  out of   1723     0%  
+   Number of fully used LUT-FF pairs:    38  out of   1723     2%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                        4196
+ Number of bonded IOBs:                4196  out of    700   599% (*) 
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 394   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 5.006ns (Maximum Frequency: 199.750MHz)
+   Minimum input arrival time before clock: 2.723ns
+   Maximum output required time after clock: 4.934ns
+   Maximum combinational path delay: 1.217ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.006ns (frequency: 199.750MHz)
+  Total number of paths / destination ports: 10477149 / 2207
+-------------------------------------------------------------------------
+Delay:               5.006ns (Levels of Logic = 9)
+  Source:            RamValid_2 (FF)
+  Destination:       Data/Mram_data1712 (RAM)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: RamValid_2 to Data/Mram_data1712
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            10   0.236   0.545  RamValid_2 (RamValid_2)
+     LUT3:I0->O           18   0.043   0.590  firstZero/ADDERTREE_INTERNAL_Madd_xor<0>111 (firstZero/ADDERTREE_INTERNAL_Madd_xor<0>11)
+     LUT6:I3->O           22   0.043   0.466  firstZero/Pre<31><10>1 (firstZero/Pre<16>)
+     LUT6:I5->O            4   0.043   0.539  firstZero/ADDERTREE_INTERNAL_Madd_cy<0>11 (firstZero/ADDERTREE_INTERNAL_Madd1_lut<1>)
+     LUT6:I2->O            1   0.043   0.000  firstZero/ADDERTREE_INTERNAL_Madd10_lut<0>221_SW0_SW1_G (N414)
+     MUXF7:I1->O           1   0.178   0.350  firstZero/ADDERTREE_INTERNAL_Madd10_lut<0>221_SW0_SW1 (N359)
+     LUT6:I5->O            8   0.043   0.389  firstZero/ADDERTREE_INTERNAL_Madd10_lut<0>221 (firstZero/ADDERTREE_INTERNAL_Madd10_lut<0>22)
+     LUT6:I5->O            3   0.043   0.362  firstZero/ADDERTREE_INTERNAL_Madd10_xor<0>31 (firstZero/ADDERTREE_INTERNAL_Madd_210)
+     LUT6:I5->O            1   0.043   0.405  firstZero/ADDERTREE_INTERNAL_Madd21_cy<2>11_1 (firstZero/ADDERTREE_INTERNAL_Madd21_cy<2>11)
+     LUT5:I3->O          356   0.043   0.529  firstZero/ADDERTREE_INTERNAL_Madd21_xor<4>11 (addr_write_4_OBUF)
+     RAM32X1D:A4               0.072          Data/Mram_data1712
+    ----------------------------------------
+    Total                      5.006ns (0.830ns logic, 4.176ns route)
+                                       (16.6% logic, 83.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 4519 / 2600
+-------------------------------------------------------------------------
+Offset:              2.723ns (Levels of Logic = 5)
+  Source:            RAM_Out_Addr<1> (PAD)
+  Destination:       RamValid_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: RAM_Out_Addr<1> to RamValid_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          1113   0.000   0.853  RAM_Out_Addr_1_IBUF (RAM_Out_Addr_1_IBUF)
+     LUT6:I0->O            1   0.043   0.522  Mmux_RAM_Out_Addr[4]_RamValid[31]_Mux_40_o_81 (Mmux_RAM_Out_Addr[4]_RamValid[31]_Mux_40_o_81)
+     LUT6:I2->O            1   0.043   0.000  Mmux_RAM_Out_Addr[4]_RamValid[31]_Mux_40_o_3 (Mmux_RAM_Out_Addr[4]_RamValid[31]_Mux_40_o_3)
+     MUXF7:I1->O           2   0.178   0.410  Mmux_RAM_Out_Addr[4]_RamValid[31]_Mux_40_o_2_f7 (RAM_Out_Addr[4]_RamValid[31]_Mux_40_o)
+     LUT6:I4->O           38   0.043   0.470  _n0283_inv1 (_n0283_inv)
+     FDRE:CE                   0.161          RamValid_0
+    ----------------------------------------
+    Total                      2.723ns (0.468ns logic, 2.255ns route)
+                                       (17.2% logic, 82.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 29678 / 2096
+-------------------------------------------------------------------------
+Offset:              4.934ns (Levels of Logic = 10)
+  Source:            RamValid_2 (FF)
+  Destination:       addr_write<4> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: RamValid_2 to addr_write<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            10   0.236   0.545  RamValid_2 (RamValid_2)
+     LUT3:I0->O           18   0.043   0.590  firstZero/ADDERTREE_INTERNAL_Madd_xor<0>111 (firstZero/ADDERTREE_INTERNAL_Madd_xor<0>11)
+     LUT6:I3->O           22   0.043   0.466  firstZero/Pre<31><10>1 (firstZero/Pre<16>)
+     LUT6:I5->O            4   0.043   0.539  firstZero/ADDERTREE_INTERNAL_Madd_cy<0>11 (firstZero/ADDERTREE_INTERNAL_Madd1_lut<1>)
+     LUT6:I2->O            1   0.043   0.000  firstZero/ADDERTREE_INTERNAL_Madd10_lut<0>221_SW0_SW1_G (N414)
+     MUXF7:I1->O           1   0.178   0.350  firstZero/ADDERTREE_INTERNAL_Madd10_lut<0>221_SW0_SW1 (N359)
+     LUT6:I5->O            8   0.043   0.389  firstZero/ADDERTREE_INTERNAL_Madd10_lut<0>221 (firstZero/ADDERTREE_INTERNAL_Madd10_lut<0>22)
+     LUT6:I5->O            3   0.043   0.362  firstZero/ADDERTREE_INTERNAL_Madd10_xor<0>31 (firstZero/ADDERTREE_INTERNAL_Madd_210)
+     LUT6:I5->O            1   0.043   0.405  firstZero/ADDERTREE_INTERNAL_Madd21_cy<2>11_1 (firstZero/ADDERTREE_INTERNAL_Madd21_cy<2>11)
+     LUT5:I3->O          356   0.043   0.529  firstZero/ADDERTREE_INTERNAL_Madd21_xor<4>11 (addr_write_4_OBUF)
+     OBUF:I->O                 0.000          addr_write_4_OBUF (addr_write<4>)
+    ----------------------------------------
+    Total                      4.934ns (0.758ns logic, 4.176ns route)
+                                       (15.4% logic, 84.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 10450 / 2090
+-------------------------------------------------------------------------
+Delay:               1.217ns (Levels of Logic = 3)
+  Source:            RAM_Out_Addr<4> (PAD)
+  Destination:       InfoRamInfo_o<41> (PAD)
+
+  Data Path: RAM_Out_Addr<4> to InfoRamInfo_o<41>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          1106   0.000   0.578  RAM_Out_Addr_4_IBUF (RAM_Out_Addr_4_IBUF)
+     RAM32M:ADDRA4->DOA1    1   0.299   0.339  Info/Mram_data1 (InfoRamInfo_o_1_OBUF)
+     OBUF:I->O                 0.000          InfoRamInfo_o_1_OBUF (InfoRamInfo_o<1>)
+    ----------------------------------------
+    Total                      1.217ns (0.299ns logic, 0.918ns route)
+                                       (24.6% logic, 75.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    5.006|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 16.82 secs
+ 
+--> 
+
+Total memory usage is 439044 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

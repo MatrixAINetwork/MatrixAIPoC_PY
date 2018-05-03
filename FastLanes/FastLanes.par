@@ -1,0 +1,48 @@
+Release 14.3 par P.40xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+WIN-VUV2TJNQVAO::  Fri May 17 23:01:30 2013
+
+par -w -intstyle ise -ol std -mt off FastLanes_map.ncd FastLanes.ncd
+FastLanes.pcf 
+
+
+Constraints file: FastLanes.pcf.
+Loading device for application Rf_Device from file '7vx485t.nph' in environment F:\Xilinx\14.3\ISE_DS\ISE\.
+   "FastLanes" is an NCD, version 3.2, device xc7vx485t, package ffg1761, speed -2
+INFO:Par:469 - Although the Overall Effort Level (-ol) for this implementation has been set to Standard, Placer will run
+   at effort level High. To override this, please set the Placer Effort Level (-pl) to Standard.
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:56 - Part 'xc7vx485t' is not a WebPack part.
+INFO:Security:15 - A feature for xc7vx485t was found but is for the wrong hostid.
+INFO:Security:61 - The XILINXD_LICENSE_FILE environment variable is not set.
+INFO:Security:63 - The LM_LICENSE_FILE environment variable is not set.
+INFO:Security:68 - For more information or for assistance in obtaining 
+ a license, please run the Xilinx License Configuration Manager
+       (xlcm or "Manage Xilinx Licenses".)
+INFO:Security:68a - user is Administrator, on host WIN-VUV2TJNQVAO.
+WARNING:Security:9b - No 'ISE' feature version 2012.10 was available for part 'xc7vx485t'.
+ERROR:Security:12 - No 'xc7vx485t' feature version 2012.10 was available (-9),
+     so 'WebPack' may not be used.
+
+----------------------------------------------------------------------
+No such feature exists.
+Feature:       ISE
+License path: 
+C:/.Xilinx\Xilinx.lic;F:\Xilinx\14.3\ISE_DS\ISE\/coregen/core_licenses\Xilinx.lic;F:\Xilinx\14.3\ISE_DS\ISE\/coregen/cor
+e_licenses\XilinxFree.lic;F:\Xilinx\14.3\ISE_DS\EDK/data/core_licenses\Xilinx.lic;
+FLEXnet Licensing error:-5,357
+For further information, refer to the FLEXnet Licensing documentation,
+available at "www.acresso.com".Invalid host.
+ The hostid of this system does not match the hostid
+ specified in the license file.
+Feature:       xc7vx485t
+Hostid:        902b3403219d
+License path: 
+C:/.Xilinx\Xilinx.lic;F:\Xilinx\14.3\ISE_DS\ISE\/coregen/core_licenses\Xilinx.lic;F:\Xilinx\14.3\ISE_DS\ISE\/coregen/cor
+e_licenses\XilinxFree.lic;F:\Xilinx\14.3\ISE_DS\EDK/data/core_licenses\Xilinx.lic;
+FLEXnet Licensing error:-9,57
+For further information, refer to the FLEXnet Licensing documentation,
+available at "www.acresso.com".
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ERROR:Par:451 - A problem was encountered attempting to get the license for this architecture. 

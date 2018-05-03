@@ -1,0 +1,181 @@
+Running: E:\Xilinx\14.3\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb_isim_beh.exe -prj D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb_beh.prj work.FastLanes_FrontEnd_tb work.glbl 
+ISim P.40xd (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/ISE/FastLanes2.61/ipcore_dir/IPCore_DisRAM_OC2_synth.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/ipcore_dir/IPCore_BloRAM_SIMTStack.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/SRAM.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/PerWarpStack.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/IPCore_substitute.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/ipcore_dir/IPCore_DisRAM_OC2.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/INTU.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/InstBufferArbiter.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/FetchArbiter.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/Decode_PTX.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/AGU.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/ThreadController.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/SIMTStack.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/ScoreBoard.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/OCUnit.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/LSUOutUnit.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/LDSTLane.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/Issue.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/INTULane.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/InstBuffer.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/FirstZero.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/FirstAddr.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/FetchToDecode.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/Fetch.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/Decode.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/CTAController.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/Timecheck.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/stall_control.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/OperandCollector.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/LDSTCluster.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/L2TagUnit.v" into library work
+WARNING:HDLCompiler:572 - "D:/ISE/FastLanes2.61/L2TagUnit.v" Line 8: Macro <L2Size_log> is redefined.
+WARNING:HDLCompiler:572 - "D:/ISE/FastLanes2.61/L2TagUnit.v" Line 15: Macro <L2Depth> is redefined.
+WARNING:HDLCompiler:572 - "D:/ISE/FastLanes2.61/L2TagUnit.v" Line 19: Macro <L2Delay> is redefined.
+Analyzing Verilog file "D:/ISE/FastLanes2.61/L1TagUnit.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/IPcore_FIFO.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/INTUCluster.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/InfoRam.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/FrontEnd.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/DDR3_OutPacket.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/Coalesce.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/SpeRegController.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/SMScheduler.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/OperandCollector_rotate.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/OpcolToExecute.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/LSU_multiSM.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/IssueToOpcol.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/FrontEnd_MultiSM.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/ExecuteToLSU.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/Execute.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/DDR3_substitute.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/DDR3_OutPacket_multiSM.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb.v" into library work
+WARNING:HDLCompiler:35 - "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb.v" Line 1408: <loadPacketLaneFirstOne> is already implicitly declared earlier.
+Analyzing Verilog file "D:/ISE/FastLanes2.61/ipcore_dir/IPCore_DisRAM_ROM_synth.v" into library work
+Analyzing Verilog file "D:/ISE/FastLanes2.61/ipcore_dir/IPCore_DisRAM_OC_synth.v" into library work
+Analyzing Verilog file "E:/Xilinx/14.3/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb.v" Line 1076: Port ldstSpace_o is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb.v" Line 1195: Port ldstSpace_i is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb.v" Line 1291: Port store_o is not connected to this instance
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb.v" Line 1360: Size mismatch in connection of port <addr>. Formal port size is 18-bit while actual signal size is 28-bit.
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/InstBuffer.v" Line 100: Port reset is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/InstBuffer.v" Line 239: Port spo is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/InstBuffer.v" Line 251: Port spo is not connected to this instance
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/FrontEnd.v" Line 452: Size mismatch in connection of port <hazardVector0_i>. Formal port size is 4-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/FrontEnd.v" Line 453: Size mismatch in connection of port <hazardVector1_i>. Formal port size is 4-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/ScoreBoard.v" Line 150: Size mismatch in connection of port <addr2wr_i>. Formal port size is 7-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/ScoreBoard.v" Line 152: Size mismatch in connection of port <data2wr_i>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/SIMTStack.v" Line 225: Size mismatch in connection of port <id>. Formal port size is 2-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/SIMTStack.v" Line 256: Size mismatch in connection of port <id>. Formal port size is 2-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/SIMTStack.v" Line 287: Size mismatch in connection of port <id>. Formal port size is 2-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/SIMTStack.v" Line 318: Size mismatch in connection of port <id>. Formal port size is 2-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb.v" Line 979: Size mismatch in connection of port <addr>. Formal port size is 18-bit while actual signal size is 10-bit.
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/Execute.v" Line 282: Port intuMask_o is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/Execute.v" Line 362: Port ldstMask_o is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 946: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 975: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1003: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1032: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1055: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1077: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1100: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1123: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1146: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1168: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1190: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1212: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1234: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1255: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1276: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:1016 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 1297: Port HeadInTime is not connected to this instance
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 627: Size mismatch in connection of port <SegNum>. Formal port size is 6-bit while actual signal size is 5-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 719: Size mismatch in connection of port <SegNum>. Formal port size is 6-bit while actual signal size is 5-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 445: Size mismatch in connection of port <SegNum>. Formal port size is 6-bit while actual signal size is 5-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/LSU_multiSM.v" Line 535: Size mismatch in connection of port <SegNum>. Formal port size is 6-bit while actual signal size is 5-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/DDR3_OutPacket_multiSM.v" Line 317: Size mismatch in connection of port <loadWarp_o>. Formal port size is 2-bit while actual signal size is 5-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/DDR3_OutPacket_multiSM.v" Line 409: Size mismatch in connection of port <loadWarp_o>. Formal port size is 2-bit while actual signal size is 5-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/DDR3_OutPacket_multiSM.v" Line 718: Size mismatch in connection of port <outmask>. Formal port size is 32-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb.v" Line 1425: Size mismatch in connection of port <loadWarp_o>. Formal port size is 5-bit while actual signal size is 2-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/DDR3_OutPacket_multiSM.v" Line 131: Size mismatch in connection of port <loadWarp_o>. Formal port size is 2-bit while actual signal size is 5-bit.
+WARNING:HDLCompiler:189 - "D:/ISE/FastLanes2.61/DDR3_OutPacket_multiSM.v" Line 224: Size mismatch in connection of port <loadWarp_o>. Formal port size is 2-bit while actual signal size is 5-bit.
+Completed static elaboration
+Compiling module IPCore_DisRAM_PyseudoRom(DATA_WI...
+Compiling module SMScheduler
+Compiling module CTAController
+Compiling module ThreadController
+Compiling module FetchArbiter
+Compiling module Fetch
+Compiling module FetchToDecode
+Compiling module Decode_PTX
+Compiling module Decode
+Compiling module InstBufferArbiter
+Compiling module IPCore_DualPort_DisRam(SRAM_DEPT...
+Compiling module InstBuffer
+Compiling module SRAM_4R4W_RESET(SRAM_DEPTH=128,S...
+Compiling module ScoreBoard
+Compiling module Issue
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="virte...
+Compiling module IPCore_BloRAM_SIMTStack
+Compiling module PerWarpStack
+Compiling module SIMTStack
+Compiling module FrontEnd
+Compiling module FrontEnd(sm_id=1)
+Compiling module FrontEnd(sm_id=2)
+Compiling module FrontEnd(sm_id=3)
+Compiling module FrontEnd_MultiSM
+Compiling module IssueToOpcol
+Compiling module SpeRegController
+Compiling module DIST_MEM_GEN_V7_2(C_FAMILY="virt...
+Compiling module IPCore_DisRAM_OC2
+Compiling module OCUnit
+Compiling module OperandCollector
+Compiling module OperandCollector_rotate
+Compiling module DDR3_substitute
+Compiling module OpcolToExecute
+Compiling module INTU
+Compiling module INTULane
+Compiling module INTUCluster
+Compiling module AGU
+Compiling module LDSTLane
+Compiling module LDSTCluster
+Compiling module Execute
+Compiling module ExecuteToLSU
+Compiling module FirstAddr
+Compiling module Coalesce
+Compiling module IPCore_DisRAM_SimplePort(SRAM_DE...
+Compiling module L1TagUnit
+Compiling module IPCore_DisRAM_SimplePort(SRAM_DE...
+Compiling module L2TagUnit
+Compiling module IPCore_DisRAM_SimplePort(SRAM_DE...
+Compiling module IPCore_DisRAM_SimplePort(SRAM_DE...
+Compiling module MemAccessFIFO
+Compiling module TimeCheck
+Compiling module FirstZero
+Compiling module IPCore_DisRAM_SimplePort(SRAM_DE...
+Compiling module IPCore_DisRAM_SimplePort(SRAM_DE...
+Compiling module InfoRAM
+Compiling module StallControl
+Compiling module FirstOne
+Compiling module LSUOutUnit
+Compiling module LSU
+Compiling module Packet
+Compiling module DDR3_OutPacket
+Compiling module DDR3_OutPacket_multiSM
+Compiling module FastLanes_FrontEnd_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 35 sub-compilation(s) to finish...
+Compiled 67 Verilog Units
+Built simulation executable D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb_isim_beh.exe
+Fuse Memory Usage: 47852 KB
+Fuse CPU Usage: 1715 ms

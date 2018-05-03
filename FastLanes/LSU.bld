@@ -1,0 +1,71 @@
+Release 14.3 ngdbuild P.40xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: E:\Xilinx\14.3\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc FastLanes.ucf -p
+xc7vx485t-ffg1761-2 LSU.ngc LSU.ngd
+
+Reading NGO file "D:/ISE/FastLanes2.61/LSU.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "FastLanes.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+ERROR:ConstraintSystem:59 - Constraint <NET "euqa_o[0]" LOC = "AM39";>
+   [FastLanes.ucf(4)]: NET "euqa_o[0]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "euqa_o[0]" LOC = "AM39";> [FastLanes.ucf(4)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "euqa_o[1]" LOC = "AN39";>
+   [FastLanes.ucf(5)]: NET "euqa_o[1]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "euqa_o[1]" LOC = "AN39";> [FastLanes.ucf(5)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "euqa_o[2]" LOC = "AR37";>
+   [FastLanes.ucf(6)]: NET "euqa_o[2]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "euqa_o[2]" LOC = "AR37";> [FastLanes.ucf(6)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "euqa_o[3]" LOC = "AT37";>
+   [FastLanes.ucf(7)]: NET "euqa_o[3]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "euqa_o[3]" LOC = "AT37";> [FastLanes.ucf(7)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "euqa_o[4]" LOC = "AR35";>
+   [FastLanes.ucf(8)]: NET "euqa_o[4]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "euqa_o[4]" LOC = "AR35";> [FastLanes.ucf(8)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "euqa_o[5]" LOC = "AP41";>
+   [FastLanes.ucf(9)]: NET "euqa_o[5]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "euqa_o[5]" LOC = "AP41";> [FastLanes.ucf(9)]' could not be found and
+   so the Locate constraint will be removed.
+
+Done...
+
+Checking expanded design ...

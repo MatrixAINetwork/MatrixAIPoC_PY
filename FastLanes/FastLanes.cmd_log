@@ -1,0 +1,45 @@
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc FastLanes.ucf -p xc7vx485t-ffg1761-2 "FastLanes.ngc" FastLanes.ngd  
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.2/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.2/FastLanes.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc FastLanes.ucf -p xc7vx485t-ffg1761-2 "FastLanes.ngc" FastLanes.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc FastLanes.ucf -p xc7vx485t-ffg1761-2 "FastLanes.ngc" FastLanes.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc FastLanes.ucf -p xc7vx485t-ffg1761-2 "FastLanes.ngc" FastLanes.ngd  
+map -intstyle ise -p xc7vx485t-ffg1761-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o FastLanes_map.ncd FastLanes.ngd FastLanes.pcf 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.4/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.4/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "D:/Xilinx Project/FastLanes2.4/FastLanes.xst" -ofn "D:/Xilinx Project/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+xst -intstyle ise -ifn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.xst" -ofn "/home/fangkuan/Downloads/FastLanes2.4/FastLanes.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc FastLanes.ucf -p xc7vx485t-ffg1761-2 FastLanes.ngc FastLanes.ngd  
+map -intstyle ise -p xc7vx485t-ffg1761-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o FastLanes_map.ncd FastLanes.ngd FastLanes.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc FastLanes.ucf -p xc7vx485t-ffg1761-2 FastLanes.ngc FastLanes.ngd  
+map -intstyle ise -p xc7vx485t-ffg1761-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o FastLanes_map.ncd FastLanes.ngd FastLanes.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc FastLanes.ucf -p xc7vx485t-ffg1761-2 FastLanes.ngc FastLanes.ngd  
+map -intstyle ise -p xc7vx485t-ffg1761-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o FastLanes_map.ncd FastLanes.ngd FastLanes.pcf 
+par -w -intstyle ise -ol high -mt off FastLanes_map.ncd FastLanes.ncd FastLanes.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml FastLanes.twx FastLanes.ncd -o FastLanes.twr FastLanes.pcf -ucf FastLanes.ucf 
+bitgen -intstyle ise -f FastLanes.ut FastLanes.ncd 
+map -intstyle ise -p xc7vx485t-ffg1761-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o FastLanes_map.ncd FastLanes.ngd FastLanes.pcf 
+map -intstyle ise -p xc7vx485t-ffg1761-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -detail -ir off -pr off -lc off -power off -o FastLanes_map.ncd FastLanes.ngd FastLanes.pcf 
+par -w -intstyle ise -ol std -mt off FastLanes_map.ncd FastLanes.ncd FastLanes.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml FastLanes.twx FastLanes.ncd -o FastLanes.twr FastLanes.pcf -ucf FastLanes.ucf 
+bitgen -intstyle ise -f FastLanes.ut FastLanes.ncd 
+par -w -intstyle ise -ol std -mt off FastLanes_map.ncd FastLanes.ncd FastLanes.pcf 

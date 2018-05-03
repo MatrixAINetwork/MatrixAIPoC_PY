@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb_isim_beh.exe" -prj "D:/ISE/FastLanes2.61/FastLanes_FrontEnd_tb_beh.prj" "work.FastLanes_FrontEnd_tb" "work.glbl" 
