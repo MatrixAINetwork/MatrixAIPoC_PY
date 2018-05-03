@@ -6,14 +6,21 @@ All AI features announced are provided in the form based on Agent Specification.
 
 We plan to optimize our internal feature modules using the custom AI functions. Python version of these codes have already been finished, waiting for proper data sources to perform optimization on.
 
-Instructions to the folder tree:
+**Instructions to the folder tree**
 
-FastLanes: Includes GPU AI codes
+/FastLanes: Includes GPU AI codes
 
-ParallelShapelet: Includes ParallelShapelet codes
+/ParallelShapelet: Includes ParallelShapelet codes
 
-Core: Includes election algorithms
+/Core: Includes the core data structure and election algorithms (VM,blockchain,etc)
+
+/p2p:p2p network protocal
+
+/crypto:crypto and hash algorithms
+
+/miner: block creation and mining
  
+
 
 
 Credits 
