@@ -10,7 +10,7 @@ Instructions to the folder tree:
 
 FastLanes: Includes GPU AI codes
 ParallelShapelet: Includes ParallelShapelet codes
-Core: Includes election algorithms
+Core: Includes election algorithms 
 
 
 Credits 
