@@ -1,1 +1,0 @@
-xst -intstyle ise -ifn "D:/ISE/FastLanes2.61/MemAccessFIFO.xst" -ofn "D:/ISE/FastLanes2.61/MemAccessFIFO.syr" 

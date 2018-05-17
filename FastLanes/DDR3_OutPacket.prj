@@ -1,5 +1,0 @@
-verilog work "LSUOutUnit.v"
-verilog work "DDR3_OutPacket.v"
-verilog work "ipcore_dir/IPCore_DisRAM_ROM_synth.v"
-verilog work "ipcore_dir/IPCore_DisRAM_OC_synth.v"
-verilog work "ipcore_dir/IPCore_DisRAM_OC2_synth.v"

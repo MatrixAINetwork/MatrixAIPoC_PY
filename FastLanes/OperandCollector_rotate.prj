@@ -1,5 +1,0 @@
-verilog work "SRAM.v"
-verilog work "OCUnit.v"
-verilog work "OperandCollector.v"
-verilog work "OperandCollector_rotate.v"
-verilog work "ipcore_dir/IPCore_DisRAM_ROM_synth.v"
