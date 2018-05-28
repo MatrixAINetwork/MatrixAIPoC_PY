@@ -33,7 +33,7 @@ Contribute: <ul><li>[Step 1: Fork this repository](#step-1-fork-this-repository)
 
 First let's get setup to do the work
 
-1. Login to your GitHub account. If you don't yet have an account then [join GitHub](https://github.com/join). I recommend that you do the [GitHub Hello World tutorial](https://guides.github.com/activities/hello-world/) before you continue.
+1. Login to your GitHub account. If you don't yet have an account then [join GitHub](https://github.com/join).
 1. Download [GitHub Desktop app](https://desktop.github.com/).
     + Alternatively if you are comfortable using Git on the command line you can do so (here's [first-contributions](https://github.com/Syknapse/first-contributions), a similar project that can serve as a guide for the commands needed). OR 
     + If you use [VS Code](https://code.visualstudio.com/ "Visual Studio Code website") it comes with integrated Git and allows you to do what we need straight from the editor.
@@ -69,12 +69,12 @@ _Estimated time: Less than 30 minutes_.
 + Now we want to make a local copy of the project. That is a copy saved on your own machine.
 + Open the GitHub desktop app. In the app:
 
-| <ul><li>Click on _File_ then _Clone repository_</li></ul> | ![Clone](readme-only/clone.PNG "click clone repository") |
-|:---|---:|
+| <ul><li>Click on _File_ then _Clone repository_</li></ul> |
+|:---|
 
-| <ul><li>You will see a list of your projects and forks on GitHub.</li><li>Select `<your-github-username>/Contribute-To-This-Project`.</li><li>Click _Clone_</li></ul> | ![Clone project](readme-only/clone-project.PNG "click on <your-github-username>/Contribute-To-This-Project") |
-|:---|:---:|
-|<ul><li>A forked project will have the fork symbol on the left.</li><li>Your fork will have your own GitHub user name.</li></ul> | ![your fork](readme-only/clone-your-fork.PNG "your fork will look like this, with your own user name") |
+| <ul><li>You will see a list of your projects and forks on GitHub.</li><li>Select `<your-github-username>/your-repo`.</li><li>Click _Clone_</li></ul> |
+|:---|
+|<ul><li>A forked project will have the fork symbol on the left.</li><li>Your fork will have your own GitHub user name.</li></ul> | 
 
 + This will take a moment as the project is copied to your hard disk. I recommend that you keep the default path which is usually `..\Documents\GitHub`.
 + Now you have a local copy of the project.
