@@ -58,7 +58,7 @@ _Estimated time: Less than 30 minutes_.
 + Make sure you are on the main page of this repo.
 
 | <ul><li>Click on the _Fork_ button</li></ul> |
-|:---|---:|
+|:---|
 
 + You now have a complete copy of the project in your own account
 
