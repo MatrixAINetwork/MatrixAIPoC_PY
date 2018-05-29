@@ -26,7 +26,7 @@ If you are a new developer and you are wondering if you need to learn Git and Gi
 
 ## Quick Access Index
 
-Contribute: <ul><li>[Step 1: Fork this repository](#step-1-fork-this-repository)</li><li>[Step 2: Clone the repository](#step-2-clone-the-repository)</li><li>[Step 3: Create a new branch](#step-3-create-a-new-branch)</li><li>[Step 6: Apply your changes](#step-4-apply-your-changes)</li><li>[Step 5: Commit your changes](#step-5-commit-your-changes)</li><li>[Step 6: Push your changes to GitHub](#step-6-push-your-changes-to-github)</li><li>[Step 7: Submit a PR](#step-7-submit-a-pr)</li><li>[Step 8: Celebrate!](#step-8-celebrate-)</li></ul> 
+Contribute: <ul><li>[Step 1: Fork this repository](#step-1-fork-this-repository)</li><li>[Step 2: Clone the repository](#step-2-clone-the-repository)</li><li>[Step 3: Create a new branch](#step-3-create-a-new-branch)</li><li>[Step 4: Apply your changes](#step-4-apply-your-changes)</li><li>[Step 5: Commit your changes](#step-5-commit-your-changes)</li><li>[Step 6: Push your changes to GitHub](#step-6-push-your-changes-to-github)</li><li>[Step 7: Submit a PR](#step-7-submit-a-pr)</li><li>[Step 8: Celebrate!](#step-8-celebrate-)</li></ul> 
 
 
 ## Setup
