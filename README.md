@@ -1,4 +1,4 @@
-[![Travis](https://travis-ci.org/matrixhaolin/MatrixAIPoC.svg?branch=master)](https://travis-ci.org/matrixhaolin/MatrixAIPoC.svg?branch=master)
+[![Travis](https://travis-ci.org/MatrixAINetworkMan/MatrixAIPoC_PY.svg?branch=master)](https://travis-ci.org/MatrixAINetworkMan/MatrixAIPoC_PY.svg?branch=master)
 
 This is a POC release (Python Version) for Election Algorithm of Consensus Mechanism, with the main aim of demonstrating how high-performance TPS can be achieved. C++ version is currently in development.You will easily understand from it that what master nodes/verification nodes/miner nodes are, how benefits are distributed as well as how extra calculation tasks are assigned.
 
