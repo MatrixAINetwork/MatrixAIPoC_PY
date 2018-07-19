@@ -1,3 +1,4 @@
+"""
 // Copyright 2018 The Matrix Authors
 // This file is part of the Matrix library.
 //
@@ -13,6 +14,7 @@
 //
 // You should have received a copy of the GNU Lesser General Public License
 // along with the Matrix library. If not, see <http://www.gnu.org/licenses/>.
+"""
 # SM2.py - The core part of the sm2 library
 # Author: zh
 # Modifier: zheng
